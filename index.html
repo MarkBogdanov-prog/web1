@@ -106,47 +106,46 @@
     
     <h1>Пример формы HTML</h1>
 
-    <h1>Форма с обязательными полями</h1>
     <form action="/" method="POST" id="myForm">
         <label class="required">
             Поле для ввода Ф.И.О:
         </label>
         <input type="text" name="field-fio" placeholder="Введите Ф.И.О" required>
         <div class="error-message">Это поле обязательно для заполнения</div>
-        
+
         <label class="required">
             Поле для ввода номера телефона:
         </label>
         <input type="tel" name="field-number" placeholder="Введите номер телефона" required pattern="[0-9]{10,11}">
         <div class="error-message">Введите корректный номер телефона (10-11 цифр)</div>
-        
+
         <label class="required">
             Поле для ввода e-mail:
         </label>
         <input type="email" name="field-email" placeholder="Введите e-mail" required>
         <div class="error-message">Введите корректный email адрес</div>
-        
+
         <label class="required">
             Поле для ввода даты рождения:
         </label>
         <input type="date" name="field-date" required>
         <div class="error-message">Выберите дату рождения</div>
-        
+
         <label class="required">
             Выберите пол:
         </label>
-        <div>
+        <div class="radio-group">
             <label>
                 <input type="radio" name="radio-gender" value="male" required>
                 Мужской
             </label>
             <label>
-                <input type="radio" name="radio-gender" value="female">
+                <input required type="radio" name="radio-gender" value="female">
                 Женский
             </label>
         </div>
         <div class="error-message">Выберите пол</div>
-        
+
         <label class="required">
             Выберите любимый язык программирования:
         </label>
@@ -164,64 +163,23 @@
             <option value="scala">Scala</option>
         </select>
         <div class="error-message">Выберите хотя бы один язык программирования</div>
-        
+
         <label class="required">
             Опишите краткую биографию:
         </label>
         <textarea name="field-biography" placeholder="Опишите свою биографию" required minlength="10"></textarea>
         <div class="error-message">Биография должна содержать не менее 10 символов</div>
-        
-        <label class="required">
-            <input name="field-check" type="checkbox" required>
-            С контрактом ознакомлен(а)
-        </label>
+
+        <div class="checkbox-group">
+            <label class="required">
+                <input name="field-check" type="checkbox" required>
+                С контрактом ознакомлен(а)
+            </label>
+        </div>
         <div class="error-message">Необходимо принять условия контракта</div>
-        
+
         <input value="Сохранить" type="submit">
     </form>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('myForm');
-            
-            
-            form.addEventListener('submit', function(event) {
-                let isValid = true;
-                
-                
-                const requiredFields = form.querySelectorAll('[required]');
-                requiredFields.forEach(function(field) {
-                    if (!field.value.trim() || (field.type === 'checkbox' && !field.checked)) {
-                        isValid = false;
-                        field.nextElementSibling.style.display = 'block';
-                    } else {
-                        field.nextElementSibling.style.display = 'none';
-                    }
-                });
-                
-                
-                const genderRadios = form.querySelectorAll('input[name="radio-gender"]');
-                let genderSelected = false;
-                for (const radio of genderRadios) {
-                    if (radio.checked) {
-                        genderSelected = true;
-                        break;
-                    }
-                }
-                if (!genderSelected) {
-                    isValid = false;
-                    document.querySelectorAll('.error-message')[4].style.display = 'block';
-                } else {
-                    document.querySelectorAll('.error-message')[4].style.display = 'none';
-                }
-                
-                if (!isValid) {
-                    event.preventDefault();
-                    alert('Пожалуйста, заполните все обязательные поля.');
-                }
-            });
-        });
-    </script>
 
   </body>
 
