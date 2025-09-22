@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<!-- комментарий в HTML -->
+
+<!-- в первой строке мы сообщаем браузеру,
+  что это документ HTML5 -->
+
+<html lang="ru">
+
+  <head>
+    <title>Лабораторная работа 1</title>
+  </head>
+
+  <body>
+    <a name="top"></a>
+    <h1>Лабораторная работа 1</h1>
+
+    <ol>
+
+      <li><a href="http://kubsu.ru/">КубГУ</a> </li>
+      <li><a href="https://kubsu.ru/">КубГУ</a> </li>
+      <li><a href="https://kubsu.ru/"">
+        <img src="Group3288.png" alt="Описание изображения">
+      </a></li>
+      <li>
+        <a href="/about">Сокращенная ссылка на внутреннюю страницу</a>
+      </li>
+    
+      <li>
+        <a href="/">Сокращенная ссылка на главную страницу</a>
+      </li>
+    
+      <li>
+        <a href="#top">Ссылка на фрагмент текущей страницы</a>
+      </li>
+
+      <li>
+        <a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами в URL</a>
+      </li>
+
+      <li>
+        <a href="https://example.com/page?id=123">Ссылка с параметром id в URL</a>
+    </li>
+    
+    <li>
+        <a href="form.html">Относительная на страницу в текущем каталоге</a>
+    </li>
+    
+    <li>
+        <a href="about/form.html">Относительная на страницу в каталоге about</a>
+    </li>
+    
+    <li>
+        <a href="../parent.html">Относительная на страницу в каталоге уровнем выше</a>
+    </li>
+    
+    <li>
+        <a href="../../grandparent.html">Относительная на страницу двумя уровнями выше</a>
+    </li>
+    
+    <li>
+        <p>Это текст абзаца с <a href="https://kubsu.ru">контекстной ссылкой</a> внутри него.</p>
+    </li>
+    
+    <li>
+        <a href="https://example.com/about#team">Ссылка на фрагмент страницы стороннего сайта</a>
+    </li>
+    
+    <li>
+        <img src="КВ.png" alt="Image Map" usemap="#examplemap" >
+        <map name="examplemap">
+            <area shape="rect" coords="96,105,725,750" href="https://www.kubsu.ru/ai/" alt="Rectangular area">
+            <area shape="circle" coords="1179,402,330" href="https://vk.com/kubsu_official" alt="Circular area">
+        </map>
+    </li>
+    
+    <li>
+        <a href="">Ссылка с пустым href</a>
+    </li>
+    
+    <li>
+        <a>Ссылка без href</a>
+    </li>
+    
+    <li>
+        <a href="https://kubsu.ru" rel="nofollow">Ссылка с запрещенным переходом для поисковиков</a>
+    </li>
+    
+    <li>
+        <a href="https://kubsu.ru" rel="noindex">Ссылка, запрещенная для индексации</a>
+    </li>
+    
+    <li>
+        <ol>
+            <li><a href="https://kubsu.ru" title="Официальный сайт КубГУ">Кубанский государственный университет</a></li>
+            <li><a href="https://kubsu.ru/university" title="Информация об университете">Об университете</a></li>
+            <li><a href="https://kubsu.ru/education" title="Образовательные программы">Образование</a></li>
+        </ol>
+    </li>
+    
+    <li>
+        <a href="ftp://user:password@ftp.example.com/file.txt">Ссылка на файл на сервере FTP с авторизацией</a>
+    </li>
+    
+    </ol>
+    
+    <h1>Пример формы HTML</h1>
+
+    <h1>Форма с обязательными полями</h1>
+    <form action="/" method="POST" id="myForm">
+        <label class="required">
+            Поле для ввода Ф.И.О:
+        </label>
+        <input type="text" name="field-fio" placeholder="Введите Ф.И.О" required>
+        <div class="error-message">Это поле обязательно для заполнения</div>
+        
+        <label class="required">
+            Поле для ввода номера телефона:
+        </label>
+        <input type="tel" name="field-number" placeholder="Введите номер телефона" required pattern="[0-9]{10,11}">
+        <div class="error-message">Введите корректный номер телефона (10-11 цифр)</div>
+        
+        <label class="required">
+            Поле для ввода e-mail:
+        </label>
+        <input type="email" name="field-email" placeholder="Введите e-mail" required>
+        <div class="error-message">Введите корректный email адрес</div>
+        
+        <label class="required">
+            Поле для ввода даты рождения:
+        </label>
+        <input type="date" name="field-date" required>
+        <div class="error-message">Выберите дату рождения</div>
+        
+        <label class="required">
+            Выберите пол:
+        </label>
+        <div>
+            <label>
+                <input type="radio" name="radio-gender" value="male" required>
+                Мужской
+            </label>
+            <label>
+                <input type="radio" name="radio-gender" value="female">
+                Женский
+            </label>
+        </div>
+        <div class="error-message">Выберите пол</div>
+        
+        <label class="required">
+            Выберите любимый язык программирования:
+        </label>
+        <select name="field-programming-languages[]" multiple size="8" required>
+            <option value="pascal">Pascal</option>
+            <option value="c">C</option>
+            <option value="c++">C++</option>
+            <option value="javascript">JavaScript</option>
+            <option value="php">PHP</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="haskel">Haskel</option>
+            <option value="clojure">Clojure</option>
+            <option value="prolog">Prolog</option>
+            <option value="scala">Scala</option>
+        </select>
+        <div class="error-message">Выберите хотя бы один язык программирования</div>
+        
+        <label class="required">
+            Опишите краткую биографию:
+        </label>
+        <textarea name="field-biography" placeholder="Опишите свою биографию" required minlength="10"></textarea>
+        <div class="error-message">Биография должна содержать не менее 10 символов</div>
+        
+        <label class="required">
+            <input name="field-check" type="checkbox" required>
+            С контрактом ознакомлен(а)
+        </label>
+        <div class="error-message">Необходимо принять условия контракта</div>
+        
+        <input value="Сохранить" type="submit">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('myForm');
+            
+            
+            form.addEventListener('submit', function(event) {
+                let isValid = true;
+                
+                
+                const requiredFields = form.querySelectorAll('[required]');
+                requiredFields.forEach(function(field) {
+                    if (!field.value.trim() || (field.type === 'checkbox' && !field.checked)) {
+                        isValid = false;
+                        field.nextElementSibling.style.display = 'block';
+                    } else {
+                        field.nextElementSibling.style.display = 'none';
+                    }
+                });
+                
+                
+                const genderRadios = form.querySelectorAll('input[name="radio-gender"]');
+                let genderSelected = false;
+                for (const radio of genderRadios) {
+                    if (radio.checked) {
+                        genderSelected = true;
+                        break;
+                    }
+                }
+                if (!genderSelected) {
+                    isValid = false;
+                    document.querySelectorAll('.error-message')[4].style.display = 'block';
+                } else {
+                    document.querySelectorAll('.error-message')[4].style.display = 'none';
+                }
+                
+                if (!isValid) {
+                    event.preventDefault();
+                    alert('Пожалуйста, заполните все обязательные поля.');
+                }
+            });
+        });
+    </script>
+
+  </body>
+
+  
+
+</html>
+ 
